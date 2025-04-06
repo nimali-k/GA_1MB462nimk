@@ -1,1 +1,6 @@
 #ignore raw reads
+*.fq.gz
+*.fastq
+*.fastq.gz
+
+
