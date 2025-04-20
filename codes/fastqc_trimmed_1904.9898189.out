@@ -1,0 +1,15 @@
+/usr/bin/lua: /usr/share/lmod/lmod/libexec/LocationT.lua:196: attempt to index field 'dirT' (a nil value)
+stack traceback:
+	/usr/share/lmod/lmod/libexec/LocationT.lua:196: in function </usr/share/lmod/lmod/libexec/LocationT.lua:127>
+	(tail call): ?
+	/usr/share/lmod/lmod/libexec/MName.lua:190: in function 'lazyEval'
+	/usr/share/lmod/lmod/libexec/MName.lua:241: in function 'sn'
+	/usr/share/lmod/lmod/libexec/Master.lua:298: in function 'load'
+	/usr/share/lmod/lmod/libexec/MasterControl.lua:1008: in function 'load'
+	/usr/share/lmod/lmod/libexec/MasterControl.lua:984: in function 'load_usr'
+	/usr/share/lmod/lmod/libexec/cmdfuncs.lua:459: in function 'cmd'
+	/usr/share/lmod/lmod/libexec/lmod:512: in function 'main'
+	/usr/share/lmod/lmod/libexec/lmod:570: in main chunk
+	[C]: ?
+mkdir: cannot create directory ‘/home/nimkup/GA_1MB462nimk/codes/trim_results/trimmed_reads_quality’: No such file or directory
+FastQC analysis complete. Results saved in /home/nimkup/GA_1MB462nimk/codes/trim_results/trimmed_reads_quality.
