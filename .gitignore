@@ -3,4 +3,6 @@
 *.fastq
 *.fastq.gz
 
+#ignore temporary output files 
+ *.out 
 
