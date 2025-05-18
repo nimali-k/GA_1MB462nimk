@@ -16,5 +16,5 @@ module load bioinfo-tools Flye/2.9.5
 #ln -s /proj/uppmax2025-3-3/Genome_Analysis/4_Zhou_2023/reads/chr3_clean_nanopore.fq.gz
 #ll -a 
 
-flye --nano-raw /home/nimkup/GA_1MB462nimk/project_data/reads/chr3_clean_nanopore.fq.gz \
- --out-dir /home/nimkup/GA_1MB462nimk/out_nano_assembly --threads 16
+flye --nano-raw /home/nimkup/genomeAnalysis/project_data/reads/chr3_clean_nanopore.fq.gz \
+ --out-dir /home/nimkup/genomeAnalysis/out_nano_assembly --threads 16

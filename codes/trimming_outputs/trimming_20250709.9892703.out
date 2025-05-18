@@ -1,5 +1,0 @@
-trimmomatic/0.39 loaded, see 'module help trimmomatic/0.39' for more information.
-Error: Unable to access jarfile trimmomatic-0.39.jar
-/var/spool/slurmd/job9892703/slurm_script: line 18: /home/nimkup/GA_1MB462nimk/project_data/reads/chr3_illumina_R1.fastq.gz: Permission denied
-/var/spool/slurmd/job9892703/slurm_script: line 19: ch3_R1.trimmed_forward_paired.fq.gz: command not found
-/var/spool/slurmd/job9892703/slurm_script: line 21: ILLUMINACLIP:TruSeq3-PE.fa:2:30:10: command not found

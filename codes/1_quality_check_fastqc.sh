@@ -4,7 +4,7 @@
 #SBATCH -p core
 #SBATCH -n 4
 #SBATCH -t 00:30:00
-#SBATCH -J fastqc3_trimmed_1904
+#SBATCH -J fastqc3_trimmed
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user nimali-madushika.kularatne.3390@student.uu.se
 #SBATCH --output=%x.%j.out
@@ -13,13 +13,13 @@
 module load bioinfo-tools FastQC/0.11.9
 
 #input directory
- 	INPUT_DIR=/home/nimkup/GA_1MB462nimk/codes/trim_result
+ 	INPUT_DIR=/home/nimkup/genomeAnalysis/results/trim_result
 
 #creating a directory for saving the trimmed reads output
-	mkdir /home/nimkup/GA_1MB462nimk/codes/trim_result/trimmed_reads_quality
+	mkdir /home/nimkup/genomeAnalysis/results/trim_result/trimmed_reads_quality
 
 #output directory
-	OUTPUT_DIR=/home/nimkup/GA_1MB462nimk/codes/trim_result/trimmed_reads_quality
+	OUTPUT_DIR=/home/nimkup/genomeAnalysis/results/trim_result/trimmed_reads_quality
 
 #set java options to increase heap size
 #export FASTQC_JAVA_OPTIONS="-Xmx4G" # set java heap size to 4 GB
