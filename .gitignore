@@ -4,5 +4,9 @@
 *.fastq.gz
 
 #ignore temporary output files 
- *.out 
+ *.out
+
+#ignore bam files
+*.bam
+*.bai
 
