@@ -1,1 +1,29 @@
+[nimkup@rackham1 nimkup]$ cd /proj/uppmax2025-3-3/Genome_Analysis/
+[nimkup@rackham1 Genome_Analysis]$ ls
+1_Zhang_2017  2_Beganovic_2023  3_Thrash_2017  4_Zhou_2023  conda_envs  ntsynt.sif  tools.sif  yahs
+[nimkup@rackham1 Genome_Analysis]$ cd 4_Zhou_2023/
+[nimkup@rackham1 4_Zhou_2023]$ ls
+Ceratodon_purpureus  embryophyte_proteomes.faa  reads
+[nimkup@rackham1 4_Zhou_2023]$ cd reads/
+[nimkup@rackham1 reads]$ ls
+chr3_clean_nanopore.fq.gz  Control_1_f1.fq.gz  CRR809859_r2.fq.gz
+chr3_clean_nanopore.hist   Control_1_r2.fq.gz  Heat_treated_42_12h_1_f1.fq.gz
+chr3_clean_nanopore.ktab   Control_2_f1.fq.gz  Heat_treated_42_12h_1_r2.fq.gz
+chr3_hiC_R1.fastq.gz       Control_2_r2.fq.gz  Heat_treated_42_12h_2_f1.fq.gz
+chr3_hiC_R2.fastq.gz       Control_3_f1.fq.gz  Heat_treated_42_12h_2_r2.fq.gz
+chr3_illumina_R1.fastq.gz  Control_3_r2.fq.gz  Heat_treated_42_12h_3_f1.fq.gz
+chr3_illumina_R2.fastq.gz  CRR809859_f1.fq.gz  Heat_treated_42_12h_3_r2.fq.gz
 
+
+#link to a specific file only, provide the file name here.
+ln -s /proj/uppmax2025-3-3/Genome_Analysis/4_Zhou_2023/reads/chr3_clean_nanopore.fq.gz
+./raw_data
+
+#check if the link is established
+
+ll -a
+
+
+allocate a node
+ 
+salloc -A uppmax2025-3-3 -M snowy -p core -n 2 -t 00:00:00 
