@@ -4,11 +4,11 @@
 #SBATCH -p core
 #SBATCH -n 4
 #SBATCH -t 00:30:00
-#SBATCH -J trimming
+#SBATCH -J trimming_2
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user nimali-madushika.kularatne.3390@student.uu.se
-#SBATCH --output=/home/nimkup/genomeAnalysis/out/trimming%j.out
-#SBATCH --error=/home/nimkup/genomeAnalysis/out/trimming%j.err
+#SBATCH --output=/home/nimkup/genomeAnalysis/out/trimming_2%j.out
+#SBATCH --error=/home/nimkup/genomeAnalysis/out/trimming_2%j.err
 
 
 # Load modules
@@ -19,10 +19,10 @@ module load bioinfo-tools trimmomatic/0.39
 
 export IN_FORWARD=/home/nimkup/genomeAnalysis/project_data/reads/chr3_illumina_R1.fastq.gz 
 export IN_REVERSE=/home/nimkup/genomeAnalysis/project_data/reads/chr3_illumina_R2.fastq.gz
-export OUT_FORWARD_P=/home/nimkup/genomeAnalysis/results/trim_result/ch3_R1.trimmed_forward_paired.fastq.gz
-export OUT_FORWARD_UP=/home/nimkup/genomeAnalysis/results/trim_result/ch3_R1.trimmed_forward_unpaired.fastq.gz
-export OUT_REVERSE_P=/home/nimkup/genomeAnalysis/results/trim_result/ch3_R2.trimmed_reverse_paired.fastq.gz
-export OUT_REVERSE_UP=/home/nimkup/genomeAnalysis/results/trim_result/ch3_R2.trimmed_reverse_unpaired.fastq.gz
+export OUT_FORWARD_P=/home/nimkup/genomeAnalysis/results/trim_result2/ch3_R1.trimmed_forward_paired.fastq.gz
+export OUT_FORWARD_UP=/home/nimkup/genomeAnalysis/results/trim_result2/ch3_R1.trimmed_forward_unpaired.fastq.gz
+export OUT_REVERSE_P=/home/nimkup/genomeAnalysis/results/trim_result2/ch3_R2.trimmed_reverse_paired.fastq.gz
+export OUT_REVERSE_UP=/home/nimkup/genomeAnalysis/results/trim_result2/ch3_R2.trimmed_reverse_unpaired.fastq.gz
 
 
 # Run Trimmomatic

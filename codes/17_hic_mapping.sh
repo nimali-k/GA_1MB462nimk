@@ -36,5 +36,11 @@ bwa mem -t 8 $ASSEMBLY $READ1 $READ2 | samtools view -Sb - > hic_unsorted.bam
 samtools sort hic_unsorted.bam -o hic_sorted.bam
 
 # Step 4: Mark duplicates
-picard MarkDuplicates I=hic_sorted.bam O=duplicate_marked.bam M=dup_metrics.txt REMOVE_DUPLICATES=false CREATE_INDEX=true
+#picard MarkDuplicates I=hic_sorted.bam O=duplicate_marked.bam M=dup_metrics.txt REMOVE_DUPLICATES=false CREATE_INDEX=true
 
+java -jar $PICARD_HOME/picard.jar MarkDuplicates \
+  I=hic_sorted.bam \
+  O=duplicate_marked.bam \
+  M=dup_metrics.txt \
+  REMOVE_DUPLICATES=false \
+  CREATE_INDEX=true

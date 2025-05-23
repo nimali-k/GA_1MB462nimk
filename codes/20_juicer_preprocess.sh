@@ -1,0 +1,46 @@
+#!/bin/bash -l
+#SBATCH -A uppmax2025-3-3
+#SBATCH -M snowy
+#SBATCH -p core
+#SBATCH -n 1
+#SBATCH -c 8
+#SBATCH -t 04:00:00
+#SBATCH -J juicer_hic
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=nimali-madushika.kularatne.3390@student.uu.se
+#SBATCH --output=/home/nimkup/genomeAnalysis/out/scaffold/juicer_hic_%j.out
+#SBATCH --error=/home/nimkup/genomeAnalysis/out/scaffold/juicer_hic_%j.err
+#SBATCH --mem=16G
+
+
+# Load modules
+module load bioinfo-tools
+module load samtools
+module load Juicer_tools/1.22.01
+
+#input and output directories
+WORK_DIR=/domus/h1/nimkup/genomeAnalysis
+YAHS=/proj/uppmax2025-3-3/Genome_Analysis/yahs
+INPUT_DIR=/proj/uppmax2025-3-3/nobackup/work/nimali/hic-tmp/scaffolding
+OUT_DIR=$INPUT_DIR/juicer
+
+mkdir -p $OUT_DIR
+
+cd $INPUT_DIR
+
+#($YAHS/juicer pre yahs.out.bin yahs.out_scaffolds_final.agp $WORK_DIR/results/polishing/polished_assembly.fasta.fai | sort -k2,2d -k6,6d -T ./ --parallel=8 -S32G | awk 'NF' > \
+alignments_sorted.txt.part) && (mv alignments_sorted.txt.part alignments_sorted.txt)
+
+$YAHS/juicer pre yahs.out.bin yahs.out_scaffolds_final.agp polished_assembly.fasta.fai \
+  | sort -k2,2d -k6,6d -T ./ -S32G > alignments_sorted.txt
+
+#samtools faidx /domus/h1/nimkup/genomeAnalysis/results/polishing/polished_assembly.fasta
+#cut -f1,2 /domus/h1/nimkup/genomeAnalysis/results/polishing/polished_assembly.fasta.fai > genome.chrom.sizes
+
+#generate Hi-C contact matrix 
+#(java -jar -Xmx32G $YAHS/juicer_tools_1.22.01.jar pre /proj/uppmax2025-3-3/nobackup/work/nimali/hic-tmp/duplicate_marked.bam  out.hic.part genome.chrom.sizes) && (mv out.hic.part out.hic)
+
+#java -Xmx32G -jar $YAHS/juicer_tools_1.22.01.jar pre yahs.out.bin out.hic genome.chrom.sizes
+
+java -Xmx32G -jar $YAHS/juicer_tools_1.22.01.jar pre alignments_sorted.txt out.hic genome.chrom.sizes
+

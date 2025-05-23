@@ -5,11 +5,11 @@
 #SBATCH -n 1
 #SBATCH -c 8
 #SBATCH -t 02:00:00
-#SBATCH -J hisat2_rna_mapping
+#SBATCH -J hisatall_rna_mapping
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=nimali-madushika.kularatne.3390@student.uu.se
-#SBATCH --output=/home/nimkup/genomeAnalysis/out/hisat_%j.out
-#SBATCH --error=/home/nimkup/genomeAnalysis/out/hisat_%j.err
+#SBATCH --output=/home/nimkup/genomeAnalysis/out/hisatall_%j.out
+#SBATCH --error=/home/nimkup/genomeAnalysis/out/hisatall_%j.err
 #SBATCH --mem=16G
 
 # Load module
@@ -23,7 +23,7 @@ REF_GENOME=$REF_DIR/polished_assembly.fasta.masked
 INDEX_PREFIX=$REF_DIR/chr3_hisat2_index
 FWD=$DATA_DIR/Control_1_f1.fq.gz
 REV=$DATA_DIR/Control_1_r2.fq.gz
-OUT_DIR=$WORK_DIR/results/hisat2_results
+OUT_DIR=$WORK_DIR/results/hisat2_results_all
 
 # Create output dir
 mkdir -p $OUT_DIR
